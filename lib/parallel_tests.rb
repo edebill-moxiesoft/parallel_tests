@@ -106,7 +106,11 @@ class ParallelTests
 
   def self.find_tests(root)
     if root.is_a?(Array)
-      root
+      if root.first && Dir.exists?(root.first)
+        root.collect { |dir| find_tests(dir) }.flatten
+      else
+        root
+      end
     else
       Dir["#{root}**/**/*#{self.test_suffix}"]
     end
