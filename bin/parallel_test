@@ -59,8 +59,15 @@ else
 
   start = Time.now
 
-  tests_folder = File.join(task, options[:path_prefix].to_s)
-  tests_folder = File.join(options[:root], tests_folder) unless options[:root].to_s.empty?
+  options[:path_prefix] = options[:path_prefix] ? options[:path_prefix].split(',') : ['']
+  tests_folder = options[:path_prefix].collect do |path| 
+    tests_folder = File.join(task, path.to_s)
+    tests_folder = File.join(options[:root], tests_folder) unless options[:root].to_s.empty?
+    tests_folder
+  end
+  tests_folder = nil if tests_folder.empty?
+
+  puts "test folders => #{tests_folder}" if tests_folder
 
   groups = klass.tests_in_groups(options[:files] || tests_folder, num_processes, :no_sort => options[:no_sort])
   num_processes = groups.size
