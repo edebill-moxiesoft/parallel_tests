@@ -21,6 +21,10 @@ class ParallelTests
 
   # finds all tests and partitions them into groups
   def self.tests_in_groups(root, num_groups, options={})
+    if root.nil?
+      root = ['unit', 'functional', 'integration'].collect { |dir| File.join(Dir.pwd, 'test', dir) }
+    end
+
     if options[:no_sort] == true
       Grouper.in_groups(find_tests(root), num_groups)
     else
