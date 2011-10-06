@@ -40,6 +40,7 @@ class ParallelTests
 
   def self.execute_command(cmd, process_number)
     cmd = "TEST_ENV_NUMBER=#{test_env_number(process_number)} ; export TEST_ENV_NUMBER; #{cmd}"
+    print "starting #{cmd}"
     f = open("|#{cmd}", 'r')
     all = ''
     while char = f.getc
@@ -49,6 +50,7 @@ class ParallelTests
       STDOUT.flush
     end
     f.close
+    print "finished #{cmd}"
     {:stdout => all, :exit_status => $?.exitstatus}
   end
 

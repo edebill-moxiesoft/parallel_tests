@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{moxiesoft_parallel_tests}
-  s.version = "0.4.12"
+  s.version = "0.4.13"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Michael Grosser", "Eric DeBill"]
-  s.date = %q{2011-04-07}
+  s.authors = ["Michael Grosser", "Erik DeBill"]
+  s.date = %q{2011-10-06}
   s.email = %q{grosser.michael@gmail.com}
   s.executables = ["parallel_cucumber", "parallel_spec", "parallel_test"]
   s.files = [
@@ -30,7 +30,7 @@ Gem::Specification.new do |s|
      "lib/parallel_tests/railtie.rb",
      "lib/parallel_tests/tasks.rb",
      "lib/tasks/parallel_tests.rake",
-     "parallel_tests.gemspec",
+     "moxiesoft_parallel_tests.gemspec",
      "spec/integration_spec.rb",
      "spec/parallel_cucumber_spec.rb",
      "spec/parallel_specs_spec.rb",
@@ -40,7 +40,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/edebill-moxiesoft/moxiesoft_parallel_tests}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.7}
+  s.rubygems_version = %q{1.6.1}
   s.summary = %q{Run tests / specs / features in parallel}
   s.test_files = [
     "spec/integration_spec.rb",
@@ -51,7 +51,6 @@ Gem::Specification.new do |s|
   ]
 
   if s.respond_to? :specification_version then
-    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then

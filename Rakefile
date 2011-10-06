@@ -11,7 +11,7 @@ begin
     gem.summary  = "Run tests / specs / features in parallel"
     gem.email    = "grosser.michael@gmail.com"
     gem.homepage = "http://github.com/edebill-moxiesoft/#{gem.name}"
-    gem.authors  = ['Michael Grosser', 'Eric DeBill']
+    gem.authors  = ['Michael Grosser', 'Erik DeBill']
     gem.add_dependency "parallel"
   end
 
